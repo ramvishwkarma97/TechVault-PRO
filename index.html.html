@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0079)file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TechVault Pro — IT Mastery Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="./index.html_files/css2" rel="stylesheet">
 <style>
   :root {
     --bg: #050a14;
@@ -1158,23 +1158,365 @@
     display: block;
     margin-top: 8px;
   }
+
+  /* ===== CHEAT SHEET SECTION ===== */
+  .cheatsheet-section { background: var(--bg); }
+
+  .cs-hero {
+    background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(138,79,255,0.06) 100%);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cs-hero::before {
+    content: '🐳';
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 12rem;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .cs-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,255,0.12);
+    border: 1px solid var(--border2);
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cs-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .cs-title span { color: var(--accent); }
+
+  .cs-desc {
+    color: var(--text2);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .cs-includes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .cs-include-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text2);
+    font-size: 0.9rem;
+  }
+
+  .cs-include-item::before {
+    content: '✓';
+    color: var(--accent2);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* Payment gate card */
+  .cs-gate {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,229,255,0.1);
+  }
+
+  .cs-gate-icon { font-size: 3.5rem; margin-bottom: 16px; display: block; }
+
+  .cs-gate-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .cs-gate-sub {
+    color: var(--text3);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .cs-price-box {
+    background: rgba(0,255,136,0.06);
+    border: 1px solid rgba(0,255,136,0.25);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cs-price-orig {
+    font-size: 0.85rem;
+    color: var(--text3);
+    text-decoration: line-through;
+  }
+
+  .cs-price-now {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--accent2);
+    text-shadow: 0 0 20px rgba(0,255,136,0.4);
+    display: block;
+  }
+
+  .cs-price-note {
+    font-size: 0.8rem;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .cs-buy-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--accent2), #00cc6a);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .cs-buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0,255,136,0.4);
+  }
+
+  .cs-wa-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(37,211,102,0.12);
+    color: #25d366;
+    border: 1px solid rgba(37,211,102,0.35);
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+  }
+
+  .cs-wa-btn:hover {
+    background: rgba(37,211,102,0.2);
+    box-shadow: 0 0 20px rgba(37,211,102,0.2);
+  }
+
+  .cs-secure {
+    font-size: 0.75rem;
+    color: var(--text3);
+    font-family: 'Share Tech Mono', monospace;
+    margin-top: 12px;
+    display: block;
+  }
+
+  /* Preview cheat sheet */
+  .cs-preview-wrap {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .cs-preview-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cs-preview-title span {
+    background: rgba(0,255,136,0.15);
+    color: var(--accent2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .cs-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .cs-card:hover { border-color: var(--border2); }
+
+  .cs-card-head {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .cs-card-head-icon { font-size: 1.1rem; }
+
+  .cs-card-body {
+    padding: 16px 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.9;
+    color: var(--accent2);
+    background: rgba(0,229,255,0.02);
+  }
+
+  .cs-card-body .cmd-line {
+    display: block;
+    color: var(--accent2);
+  }
+
+  .cs-card-body .cmd-comment {
+    color: var(--text3);
+  }
+
+  /* Locked blur overlay */
+  .cs-locked-overlay {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .cs-locked-overlay .blur-wrap {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.4;
+  }
+
+  .cs-lock-banner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,10,20,0.7);
+    backdrop-filter: blur(2px);
+    border: 1px dashed rgba(0,229,255,0.3);
+    border-radius: 12px;
+    gap: 12px;
+    padding: 30px;
+  }
+
+  .cs-lock-banner h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .cs-lock-banner p {
+    color: var(--text2);
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Download success panel */
+  .download-panel {
+    display: none;
+    background: rgba(0,255,136,0.06);
+    border: 1px solid rgba(0,255,136,0.3);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .download-panel.show { display: block; }
+
+  .download-panel h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+
+  .download-panel p {
+    color: var(--text2);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .cs-hero { grid-template-columns: 1fr; }
+    .cs-gate { max-width: 420px; margin: 0 auto; }
+  }
+
 </style>
 </head>
 <body>
 
 <!-- Background Grid -->
 <div class="grid-bg"></div>
-<div id="particles"></div>
+<div id="particles"><div class="particle" style="left: 98.3907%; animation-duration: 11.1398s; animation-delay: 2.76368s; width: 2.04692px; height: 2.01676px; opacity: 0.324513; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 3.47603%; animation-duration: 11.459s; animation-delay: 5.50731s; width: 2.25983px; height: 1.64555px; opacity: 0.377876; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 42.4228%; animation-duration: 14.6213s; animation-delay: 6.78976s; width: 2.21242px; height: 2.71734px; opacity: 0.660482; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 76.1705%; animation-duration: 10.7186s; animation-delay: 2.78215s; width: 1.88838px; height: 1.70508px; opacity: 0.514124; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 98.9155%; animation-duration: 6.64117s; animation-delay: 2.15443s; width: 1.11034px; height: 2.80476px; opacity: 0.334559; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 63.5983%; animation-duration: 9.66667s; animation-delay: 7.91342s; width: 2.53008px; height: 1.32368px; opacity: 0.611148; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 77.3576%; animation-duration: 16.6205s; animation-delay: 6.15675s; width: 1.44159px; height: 1.11898px; opacity: 0.392588; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 20.0342%; animation-duration: 10.1714s; animation-delay: 7.2938s; width: 2.09754px; height: 1.26645px; opacity: 0.554029; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 72.7774%; animation-duration: 7.70011s; animation-delay: 1.86528s; width: 2.17248px; height: 1.25045px; opacity: 0.36566; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 20.5984%; animation-duration: 12.9793s; animation-delay: 2.37344s; width: 2.19204px; height: 2.72271px; opacity: 0.368534; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 96.3317%; animation-duration: 8.3158s; animation-delay: 7.91572s; width: 1.84032px; height: 2.34986px; opacity: 0.445153; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 99.8736%; animation-duration: 15.8892s; animation-delay: 6.23029s; width: 2.93301px; height: 1.62523px; opacity: 0.628393; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 41.1391%; animation-duration: 16.1433s; animation-delay: 3.72263s; width: 1.3969px; height: 1.91966px; opacity: 0.300373; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 2.72748%; animation-duration: 7.65621s; animation-delay: 0.89206s; width: 2.60033px; height: 1.86864px; opacity: 0.682381; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 6.7946%; animation-duration: 17.9443s; animation-delay: 6.72104s; width: 1.07002px; height: 2.01719px; opacity: 0.435294; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 24.7309%; animation-duration: 12.4153s; animation-delay: 0.622377s; width: 1.6369px; height: 2.26179px; opacity: 0.317523; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 9.08033%; animation-duration: 16.4844s; animation-delay: 7.7685s; width: 2.84568px; height: 1.04137px; opacity: 0.506306; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 97.1195%; animation-duration: 15.2305s; animation-delay: 6.86457s; width: 2.15383px; height: 2.55745px; opacity: 0.744146; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 41.0113%; animation-duration: 10.7678s; animation-delay: 1.36164s; width: 2.13305px; height: 1.93461px; opacity: 0.627663; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 44.4156%; animation-duration: 6.91972s; animation-delay: 2.27388s; width: 1.79988px; height: 2.92732px; opacity: 0.409785; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 17.838%; animation-duration: 7.53952s; animation-delay: 2.81018s; width: 2.52859px; height: 1.96527px; opacity: 0.640996; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 1.90842%; animation-duration: 14.0455s; animation-delay: 3.05481s; width: 1.58525px; height: 2.05964px; opacity: 0.797502; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 44.6848%; animation-duration: 11.995s; animation-delay: 1.15583s; width: 2.58712px; height: 2.5198px; opacity: 0.739368; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 6.21626%; animation-duration: 13.8115s; animation-delay: 5.00963s; width: 2.99098px; height: 2.56843px; opacity: 0.640857; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 58.5968%; animation-duration: 8.4731s; animation-delay: 6.29339s; width: 2.40628px; height: 2.81789px; opacity: 0.549351; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 56.8038%; animation-duration: 9.75925s; animation-delay: 2.67319s; width: 1.3973px; height: 1.86761px; opacity: 0.373002; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 10.1492%; animation-duration: 7.44711s; animation-delay: 0.595471s; width: 1.23954px; height: 1.37439px; opacity: 0.337096; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 11.8361%; animation-duration: 9.43361s; animation-delay: 7.22884s; width: 2.52784px; height: 1.50568px; opacity: 0.70614; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 66.8623%; animation-duration: 17.2261s; animation-delay: 6.56191s; width: 2.96075px; height: 1.14958px; opacity: 0.491466; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 37.8373%; animation-duration: 7.00781s; animation-delay: 1.92787s; width: 2.13242px; height: 2.27769px; opacity: 0.758804; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 53.178%; animation-duration: 17.184s; animation-delay: 7.38226s; width: 1.87444px; height: 1.48122px; opacity: 0.757233; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 93.8029%; animation-duration: 16.7374s; animation-delay: 0.179749s; width: 1.80839px; height: 2.2084px; opacity: 0.435574; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 22.3409%; animation-duration: 12.9749s; animation-delay: 4.04997s; width: 1.88913px; height: 2.45605px; opacity: 0.491138; background: rgb(0, 255, 136);"></div><div class="particle" style="left: 64.4853%; animation-duration: 15.2504s; animation-delay: 7.11555s; width: 2.32541px; height: 1.81282px; opacity: 0.515476; background: rgb(0, 229, 255);"></div><div class="particle" style="left: 58.0539%; animation-duration: 11.1473s; animation-delay: 4.716s; width: 2.4966px; height: 2.23115px; opacity: 0.372552; background: rgb(0, 229, 255);"></div></div>
 
 <!-- Navigation -->
 <nav>
-  <a href="#" class="logo">Tech<span>Vault</span> PRO</a>
+  <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" class="logo">Tech<span>Vault</span> PRO</a>
   <ul class="nav-links">
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#preview">Preview</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#" class="nav-cta" onclick="openModal('All Access Bundle')">Enroll Now</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#courses">Courses</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview">Preview</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#pricing">Pricing</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#cheatsheet">Cheat Sheet</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#contact">Contact</a></li>
+    <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" class="nav-cta" onclick="openModal(&#39;All Access Bundle&#39;)">Enroll Now</a></li>
   </ul>
 </nav>
 
@@ -1189,7 +1531,7 @@
 
   <p class="hero-sub">
     Complete IT mastery from Linux to Cybersecurity, DevOps to Cloud Infrastructure.
-    Real-world notes, templates & interview prep — built by engineers, for engineers.
+    Real-world notes, templates &amp; interview prep — built by engineers, for engineers.
   </p>
 
   <span class="terminal-line">$ sudo apt install knowledge --level=expert</span>
@@ -1214,43 +1556,43 @@
   </div>
 
   <div class="hero-btns">
-    <a href="#courses" class="btn-primary">Explore Courses</a>
-    <a href="#preview" class="btn-outline">Free Preview →</a>
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#courses" class="btn-primary">Explore Courses</a>
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="btn-outline">Free Preview →</a>
   </div>
 </section>
 
 <!-- COURSES GRID -->
 <section class="categories-bg" id="courses">
-  <div class="section-header fade-in">
+  <div class="section-header fade-in visible">
     <span class="section-tag">// What You'll Learn</span>
     <h2 class="section-title">All Course Modules</h2>
     <p class="section-sub">From beginner to enterprise — everything you need to crack IT interviews and build real skills.</p>
   </div>
 
   <div class="categories-grid">
-    <a href="#preview" class="cat-card linux fade-in" onclick="loadCourse('linux')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card linux fade-in visible" onclick="loadCourse(&#39;linux&#39;)">
       <div class="cat-icon">🐧</div>
       <div class="cat-name">Linux Mastery</div>
-      <div class="cat-desc">Commands, shell scripting, troubleshooting, assignments & SRE-level scenarios. Beginner to expert.</div>
+      <div class="cat-desc">Commands, shell scripting, troubleshooting, assignments &amp; SRE-level scenarios. Beginner to expert.</div>
       <div class="cat-meta">
         <span class="cat-count">8 chapters • 80 pages</span>
         <span class="cat-badge badge-free">2 Free</span>
       </div>
     </a>
 
-    <a href="#preview" class="cat-card cyber fade-in" onclick="loadCourse('cyber')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card cyber fade-in visible" onclick="loadCourse(&#39;cyber&#39;)">
       <div class="cat-icon">🔐</div>
       <div class="cat-name">Cybersecurity</div>
-      <div class="cat-desc">GRC, AppSec, SOC, incident management, Wazuh SIEM, zero trust, templates & real documents.</div>
+      <div class="cat-desc">GRC, AppSec, SOC, incident management, Wazuh SIEM, zero trust, templates &amp; real documents.</div>
       <div class="cat-meta">
         <span class="cat-count">10 chapters • 95 pages</span>
         <span class="cat-badge badge-new">New</span>
       </div>
     </a>
 
-    <a href="#preview" class="cat-card devops fade-in" onclick="loadCourse('devops')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card devops fade-in visible" onclick="loadCourse(&#39;devops&#39;)">
       <div class="cat-icon">⚙️</div>
-      <div class="cat-name">DevOps & CI/CD</div>
+      <div class="cat-name">DevOps &amp; CI/CD</div>
       <div class="cat-desc">Docker, Kubernetes, Jenkins, GitOps, pipelines, monitoring, and full microservices architecture.</div>
       <div class="cat-meta">
         <span class="cat-count">9 chapters • 88 pages</span>
@@ -1258,9 +1600,9 @@
       </div>
     </a>
 
-    <a href="#preview" class="cat-card network fade-in" onclick="loadCourse('network')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card network fade-in visible" onclick="loadCourse(&#39;network&#39;)">
       <div class="cat-icon">🌐</div>
-      <div class="cat-name">Networking & TCP/IP</div>
+      <div class="cat-name">Networking &amp; TCP/IP</div>
       <div class="cat-desc">TCP/IP stack, DHCP, DNS, subnetting, routing, switching, VLANs and enterprise network design.</div>
       <div class="cat-meta">
         <span class="cat-count">7 chapters • 75 pages</span>
@@ -1268,7 +1610,7 @@
       </div>
     </a>
 
-    <a href="#preview" class="cat-card windows fade-in" onclick="loadCourse('windows')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card windows fade-in visible" onclick="loadCourse(&#39;windows&#39;)">
       <div class="cat-icon">🪟</div>
       <div class="cat-name">Windows Server + IT Interview</div>
       <div class="cat-desc">Active Directory, Group Policy, DNS/DHCP on Windows, plus 150+ IT interview Q&amp;A with answers.</div>
@@ -1278,30 +1620,30 @@
       </div>
     </a>
 
-    <a href="#preview" class="cat-card infra fade-in" onclick="loadCourse('infra')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card infra fade-in visible" onclick="loadCourse(&#39;infra&#39;)">
       <div class="cat-icon">🖥️</div>
       <div class="cat-name">IT Infrastructure</div>
-      <div class="cat-desc">Server rack setup, NAS vs SAN deep dive, data center best practices, hardware specs & topology.</div>
+      <div class="cat-desc">Server rack setup, NAS vs SAN deep dive, data center best practices, hardware specs &amp; topology.</div>
       <div class="cat-meta">
         <span class="cat-count">5 chapters • 55 pages</span>
         <span class="cat-badge badge-free">2 Free</span>
       </div>
     </a>
 
-    <a href="#preview" class="cat-card vmware fade-in" onclick="loadCourse('vmware')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card vmware fade-in visible" onclick="loadCourse(&#39;vmware&#39;)">
       <div class="cat-icon">💻</div>
-      <div class="cat-name">VMware & ESXi</div>
-      <div class="cat-desc">vSphere, ESXi installation, VM configuration, snapshots, vCenter, HA clusters & migration guides.</div>
+      <div class="cat-name">VMware &amp; ESXi</div>
+      <div class="cat-desc">vSphere, ESXi installation, VM configuration, snapshots, vCenter, HA clusters &amp; migration guides.</div>
       <div class="cat-meta">
         <span class="cat-count">7 chapters • 68 pages</span>
         <span class="cat-badge badge-new">New</span>
       </div>
     </a>
 
-    <a href="#preview" class="cat-card security fade-in" onclick="loadCourse('zerotrust')">
+    <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#preview" class="cat-card security fade-in visible" onclick="loadCourse(&#39;zerotrust&#39;)">
       <div class="cat-icon">🛡️</div>
       <div class="cat-name">Zero Trust Security</div>
-      <div class="cat-desc">Zero Trust architecture, identity-based access, micro-segmentation, SASE model & implementation.</div>
+      <div class="cat-desc">Zero Trust architecture, identity-based access, micro-segmentation, SASE model &amp; implementation.</div>
       <div class="cat-meta">
         <span class="cat-count">5 chapters • 50 pages</span>
         <span class="cat-badge badge-pro">Pro</span>
@@ -1312,24 +1654,433 @@
 
 <!-- COURSE PREVIEW + LOCK -->
 <section class="course-view" id="preview">
-  <div class="section-header fade-in">
+  <div class="section-header fade-in visible">
     <span class="section-tag">// Course Preview</span>
     <h2 class="section-title">Read Before You Buy</h2>
     <p class="section-sub">First 2 pages are completely free. Unlock all pages after payment.</p>
   </div>
 
-  <div class="course-tabs fade-in" id="courseTabs">
-    <button class="course-tab active" onclick="loadCourse('linux')">🐧 Linux</button>
-    <button class="course-tab" onclick="loadCourse('cyber')">🔐 Cybersecurity</button>
-    <button class="course-tab" onclick="loadCourse('devops')">⚙️ DevOps</button>
-    <button class="course-tab" onclick="loadCourse('network')">🌐 Networking</button>
-    <button class="course-tab" onclick="loadCourse('infra')">🖥️ Infrastructure</button>
-    <button class="course-tab" onclick="loadCourse('vmware')">💻 VMware</button>
+  <div class="course-tabs fade-in visible" id="courseTabs">
+    <button class="course-tab active" onclick="loadCourse(&#39;linux&#39;)">🐧 Linux</button>
+    <button class="course-tab" onclick="loadCourse(&#39;cyber&#39;)">🔐 Cybersecurity</button>
+    <button class="course-tab" onclick="loadCourse(&#39;devops&#39;)">⚙️ DevOps</button>
+    <button class="course-tab" onclick="loadCourse(&#39;network&#39;)">🌐 Networking</button>
+    <button class="course-tab" onclick="loadCourse(&#39;infra&#39;)">🖥️ Infrastructure</button>
+    <button class="course-tab" onclick="loadCourse(&#39;vmware&#39;)">💻 VMware</button>
   </div>
 
-  <div class="course-container fade-in">
+  <div class="course-container fade-in visible">
     <!-- Dynamic content loaded by JS -->
-    <div id="courseDisplay"></div>
+    <div id="courseDisplay">
+    <div class="course-header-card">
+      <div>
+        <div style="font-size:2.5rem; margin-bottom:12px">🐧</div>
+        <h2 class="course-title">Linux Mastery</h2>
+        <p class="course-info">Complete Linux guide from fundamentals to enterprise SRE-level scenarios, assignments &amp; troubleshooting.</p>
+        <div class="course-tags"><span class="tag">Shell Scripting</span><span class="tag">Top Commands</span><span class="tag">Scenarios</span><span class="tag">Assignments</span><span class="tag">SRE Level</span></div>
+      </div>
+      <div class="course-price-box">
+        <div class="price-orig">₹599</div>
+        <div class="price-now">₹299</div>
+        <div class="price-label">LIFETIME ACCESS</div>
+        <br>
+        <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)" style="font-size:0.85rem; padding:10px 20px;">🔓 Unlock All</button>
+      </div>
+    </div>
+
+    <div class="pages-list">
+      
+        <div class="page-item unlocked" id="page-0">
+          <div class="page-header" onclick="togglePage(0, true)">
+            <span class="page-num">01</span>
+            <div class="page-icon">🐧</div>
+            <span class="page-title">Linux Fundamentals — File System &amp; Core Commands</span>
+            <div class="page-status">
+              <span class="status-free">FREE</span><span style="color:var(--text3);font-size:1rem;">▼</span>
+            </div>
+          </div>
+          <div class="page-content open" id="content-0">
+            
+          <p>Linux is a free and open-source Unix-like operating system kernel. Understanding the Linux file system hierarchy is the foundation of all system administration work.</p>
+          <div class="info-box"><strong>Key Concept:</strong> Everything in Linux is a file — including devices, processes, and even directories.</div>
+          <p><strong>File System Hierarchy (FHS):</strong></p>
+          <div class="code-block">/          → Root directory (top of the tree)
+/bin       → Essential user binaries (ls, cp, mv)
+/etc       → Configuration files
+/home      → User home directories
+/var       → Variable data (logs, spool)
+/tmp       → Temporary files
+/usr       → User programs and data
+/proc      → Virtual filesystem (kernel/process info)
+/dev       → Device files</div>
+          <p><strong>Essential Commands Every Engineer Must Know:</strong></p>
+          <div class="code-block">ls -la          # List all files with permissions
+pwd             # Print working directory
+cd /path        # Change directory
+mkdir -p a/b/c  # Create nested directories
+rm -rf dir/     # Remove directory recursively
+cp -r src/ dst/ # Copy files/directories
+chmod 755 file  # Change file permissions
+chown user file # Change file ownership</div>
+          <div class="info-box"><strong>Pro Tip:</strong> Use <code>man command</code> to read the manual page for any command. Example: <code>man ls</code></div>
+        
+          </div>
+        </div>
+      
+        <div class="page-item unlocked" id="page-1">
+          <div class="page-header" onclick="togglePage(1, true)">
+            <span class="page-num">02</span>
+            <div class="page-icon">📊</div>
+            <span class="page-title">Top Linux Commands — Process, Memory &amp; System Monitoring</span>
+            <div class="page-status">
+              <span class="status-free">FREE</span><span style="color:var(--text3);font-size:1rem;">▼</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-1">
+            
+          <p>System monitoring is a critical skill for Linux administrators and DevOps engineers. These commands help you understand what's happening on your system in real-time.</p>
+          <div class="code-block">top             # Interactive process viewer (CPU/MEM live)
+htop            # Enhanced process viewer (better UI)
+ps aux          # List all running processes
+ps aux | grep nginx  # Find specific process
+kill -9 PID     # Force kill process by PID
+killall nginx   # Kill all processes by name</div>
+          <p><strong>Memory &amp; Disk Commands:</strong></p>
+          <div class="code-block">free -h         # Show RAM usage (human readable)
+df -h           # Disk space usage
+du -sh /var/*   # Directory size breakdown
+vmstat 1        # Virtual memory stats every 1s
+iostat -x       # I/O statistics</div>
+          <div class="info-box"><strong>Interview Tip:</strong> <code>top</code> command — press <strong>M</strong> to sort by memory, <strong>P</strong> for CPU, <strong>k</strong> to kill a process directly.</div>
+          <div class="code-block">uptime          # System uptime and load averages
+uname -a        # Kernel version and system info
+hostname        # Show system hostname
+lscpu           # CPU architecture details
+lsblk           # List block devices</div>
+        
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-2">
+          <div class="page-header" onclick="togglePage(2, false)">
+            <span class="page-num">03</span>
+            <div class="page-icon">📝</div>
+            <span class="page-title">Shell Scripting — Automation &amp; Bash Programming</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-2">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-3">
+          <div class="page-header" onclick="togglePage(3, false)">
+            <span class="page-num">04</span>
+            <div class="page-icon">🔧</div>
+            <span class="page-title">Linux Troubleshooting — Enterprise SRE Scenarios</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-3">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-4">
+          <div class="page-header" onclick="togglePage(4, false)">
+            <span class="page-num">05</span>
+            <div class="page-icon">🌐</div>
+            <span class="page-title">Networking in Linux — SS, NetStat, IPTables</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-4">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-5">
+          <div class="page-header" onclick="togglePage(5, false)">
+            <span class="page-num">06</span>
+            <div class="page-icon">👤</div>
+            <span class="page-title">User Management &amp; Permissions — ACL, sudo, PAM</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-5">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-6">
+          <div class="page-header" onclick="togglePage(6, false)">
+            <span class="page-num">07</span>
+            <div class="page-icon">📦</div>
+            <span class="page-title">Package Management — YUM, APT, RPM, SNAP</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-6">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="page-item locked" id="page-7">
+          <div class="page-header" onclick="togglePage(7, false)">
+            <span class="page-num">08</span>
+            <div class="page-icon">🎯</div>
+            <span class="page-title">Linux Interview Questions — Top 80 Q&amp;A</span>
+            <div class="page-status">
+              <span class="status-lock"><span class="lock-icon">🔒</span> LOCKED</span>
+            </div>
+          </div>
+          <div class="page-content" id="content-7">
+            
+              <div class="lock-overlay">
+                <span class="lock-big">🔒</span>
+                <h3>This Chapter is Locked</h3>
+                <p>Unlock the full course to access all 8 chapters, downloadable PDFs, and bonus materials.</p>
+                <button class="btn-primary" onclick="openModal(&#39;Linux Mastery&#39;)">🔓 Unlock Now — ₹299</button>
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- DOCKER CHEAT SHEET - PAYMENT GATED -->
+<section class="cheatsheet-section" id="cheatsheet">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Free Resource — Pay to Download</span>
+    <h2 class="section-title">Docker Commands <span style="color:var(--accent)">Cheat Sheet</span></h2>
+    <p class="section-sub">Complete Docker reference — 50+ commands, multi-stage builds, Compose, health checks. Preview free, download after ₹299.</p>
+  </div>
+
+  <div class="cs-hero fade-in">
+    <!-- Left: Info -->
+    <div>
+      <div class="cs-label">📄 PDF CHEAT SHEET</div>
+      <h2 class="cs-title">Docker Commands<br><span>Complete Reference</span></h2>
+      <p class="cs-desc">
+        A professionally formatted 3-page PDF covering every essential Docker command — from basics to multi-stage builds, Compose v2, healthchecks, registry operations, and production-ready networking. Print it, pin it, use it daily.
+      </p>
+      <div class="cs-includes">
+        <div class="cs-include-item">Basics, Images, Build &amp; Run commands</div>
+        <div class="cs-include-item">Exec / Shell access &amp; Logs management</div>
+        <div class="cs-include-item">Volumes, Bind Mounts &amp; Networks</div>
+        <div class="cs-include-item">Docker Compose v2 full reference</div>
+        <div class="cs-include-item">Multi-stage builds (Java/Node examples)</div>
+        <div class="cs-include-item">Clean up, Registry Push &amp; Healthcheck</div>
+        <div class="cs-include-item">3 pages • Print-ready dark PDF format</div>
+      </div>
+    </div>
+
+    <!-- Right: Payment Gate -->
+    <div>
+      <div class="cs-gate" id="payGate">
+        <span class="cs-gate-icon">🐳</span>
+        <div class="cs-gate-title">Unlock PDF Download</div>
+        <div class="cs-gate-sub">Pay once — download instantly.<br>Sent via WhatsApp or Email.</div>
+
+        <div class="cs-price-box">
+          <div class="cs-price-orig">₹599 Original Price</div>
+          <span class="cs-price-now">₹299</span>
+          <div class="cs-price-note">One-time • Lifetime PDF access</div>
+        </div>
+
+        <button class="cs-buy-btn" onclick="csOpenUPI()">
+          📲 Pay ₹299 via UPI / GPay
+        </button>
+        <button class="cs-wa-btn" onclick="csWhatsApp()">
+          💬 Pay &amp; Get on WhatsApp
+        </button>
+        <span class="cs-secure">🔒 Secure • UPI 8878091483 • Instant Delivery</span>
+      </div>
+
+      <!-- UPI Details Panel (shows after click) -->
+      <div class="upi-details" id="csUpiPanel" style="margin-top:16px; display:none;">
+        <div class="upi-row">
+          <div>
+            <div class="upi-label">UPI ID / Number</div>
+            <div class="upi-value">8878091483</div>
+          </div>
+          <button class="copy-btn" id="csUpiCopyBtn" onclick="copyText(&#39;8878091483&#39;,&#39;csUpiCopyBtn&#39;)">Copy</button>
+        </div>
+        <div class="upi-row" style="margin-top:10px;">
+          <div>
+            <div class="upi-label">Pay to Name</div>
+            <div class="upi-value" style="font-size:0.9rem;color:var(--text);">Ram Vishwakarma</div>
+          </div>
+          <span style="font-size:1.3rem;">💳</span>
+        </div>
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:0.82rem; color:var(--accent4); line-height:1.6;">
+          📋 Steps: Open GPay / PhonePe → Search UPI <strong>8878091483</strong> → Pay ₹299 → Screenshot bhejo WhatsApp <strong>8878091483</strong> pe → PDF turant milega ✅
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREE PREVIEW CARDS -->
+  <div class="fade-in">
+    <div class="cs-preview-title">
+      🔓 Free Preview — Page 1 of 3
+      <span>FREE</span>
+    </div>
+    <div class="cs-grid">
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">⚙️</span> Basics</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker version <span class="cmd-comment"># Client &amp; server versions</span></span>
+          <span class="cmd-line">docker info <span class="cmd-comment"># System-wide info</span></span>
+          <span class="cmd-line">docker help &lt;cmd&gt; <span class="cmd-comment"># Help for any command</span></span>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">📦</span> Images</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker pull nginx:alpine <span class="cmd-comment"># Download image</span></span>
+          <span class="cmd-line">docker images <span class="cmd-comment"># List images</span></span>
+          <span class="cmd-line">docker rmi &lt;image&gt; <span class="cmd-comment"># Remove image</span></span>
+          <span class="cmd-line">docker tag &lt;img&gt; user/repo:tag</span>
+          <span class="cmd-line">docker save -o img.tar &lt;img&gt;</span>
+          <span class="cmd-line">docker load -i img.tar</span>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">🏗️</span> Build</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker build -t app:dev .</span>
+          <span class="cmd-line">docker build -f Dockerfile.prod -t app:prod .</span>
+          <span class="cmd-line">docker build --no-cache -t app:clean .</span>
+          <span class="cmd-line">docker buildx build \</span>
+          <span class="cmd-line">  --platform linux/amd64,arm64 \</span>
+          <span class="cmd-line">  -t user/app:latest --push .</span>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">▶️</span> Run / Start / Stop</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker run --name web -p 8080:80 nginx:alpine</span>
+          <span class="cmd-line">docker run -d --name api -e ENV=prod app:dev</span>
+          <span class="cmd-line">docker ps <span class="cmd-comment"># Running containers</span></span>
+          <span class="cmd-line">docker ps -a <span class="cmd-comment"># All containers</span></span>
+          <span class="cmd-line">docker stop &lt;cid|name&gt;</span>
+          <span class="cmd-line">docker start &lt;cid|name&gt;</span>
+          <span class="cmd-line">docker rm &lt;cid|name&gt;</span>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">🖥️</span> Exec / Shell</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker exec -it &lt;cid|name&gt; sh</span>
+          <span class="cmd-line">docker exec -it &lt;cid|name&gt; bash</span>
+          <span class="cmd-line">docker exec -it &lt;cid|name&gt; env</span>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-head"><span class="cs-card-head-icon">📋</span> Logs</div>
+        <div class="cs-card-body">
+          <span class="cmd-line">docker logs &lt;cid|name&gt;</span>
+          <span class="cmd-line">docker logs -f --tail 200 &lt;cid|name&gt;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCKED SECTION -->
+    <div class="cs-locked-overlay" style="margin-top:20px;">
+      <div class="blur-wrap">
+        <div class="cs-grid">
+          <div class="cs-card">
+            <div class="cs-card-head"><span class="cs-card-head-icon">🌐</span> Networks</div>
+            <div class="cs-card-body">
+              <span class="cmd-line">docker network ls</span>
+              <span class="cmd-line">docker network create mynet</span>
+              <span class="cmd-line">docker run --network=mynet --name db postgres:16</span>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-card-head"><span class="cs-card-head-icon">🧹</span> Clean Up</div>
+            <div class="cs-card-body">
+              <span class="cmd-line">docker system df</span>
+              <span class="cmd-line">docker system prune</span>
+              <span class="cmd-line">docker system prune -a</span>
+              <span class="cmd-line">docker volume prune</span>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-card-head"><span class="cs-card-head-icon">📦</span> Compose v2</div>
+            <div class="cs-card-body">
+              <span class="cmd-line">docker compose up -d</span>
+              <span class="cmd-line">docker compose ps</span>
+              <span class="cmd-line">docker compose logs -f &lt;svc&gt;</span>
+              <span class="cmd-line">docker compose down -v</span>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-card-head"><span class="cs-card-head-icon">🔁</span> Multi-stage Build</div>
+            <div class="cs-card-body">
+              <span class="cmd-line">FROM maven:3.9 AS build</span>
+              <span class="cmd-line">WORKDIR /src</span>
+              <span class="cmd-line">RUN mvn -DskipTests package</span>
+              <span class="cmd-line">FROM gcr.io/distroless/java21</span>
+              <span class="cmd-line">COPY --from=build /src/target/app.jar .</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Lock banner over blur -->
+      <div class="cs-lock-banner">
+        <span style="font-size:2.5rem;">🔒</span>
+        <h3>Page 2 &amp; 3 Locked</h3>
+        <p>Networks, Volumes, Docker Compose, Multi-stage Build, Registry &amp; Clean Up commands are locked.<br>Pay ₹299 to download the complete 3-page PDF.</p>
+        <button class="btn-primary" onclick="csOpenUPI()" style="font-size:0.85rem; padding:12px 28px;">🔓 Unlock Full PDF — ₹299</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1398,9 +2149,9 @@
         <li><span class="check">✓</span> Lifetime access</li>
         <li><span class="cross">✗</span> Other modules</li>
         <li><span class="cross">✗</span> Template documents</li>
-        <li><span class="cross">✗</span> Interview Q&A banks</li>
+        <li><span class="cross">✗</span> Interview Q&amp;A banks</li>
       </ul>
-      <button class="btn-outline" onclick="openModal('Single Module')" style="width:100%">Get Module</button>
+      <button class="btn-outline" onclick="openModal(&#39;Single Module&#39;)" style="width:100%">Get Module</button>
     </div>
 
     <div class="pricing-card featured fade-in">
@@ -1412,11 +2163,11 @@
         <li><span class="check">✓</span> All 14 course modules</li>
         <li><span class="check">✓</span> 500+ pages of notes</li>
         <li><span class="check">✓</span> All PDF downloads</li>
-        <li><span class="check">✓</span> Cyber templates & docs</li>
-        <li><span class="check">✓</span> IT interview Q&A bank</li>
+        <li><span class="check">✓</span> Cyber templates &amp; docs</li>
+        <li><span class="check">✓</span> IT interview Q&amp;A bank</li>
         <li><span class="check">✓</span> Future updates FREE</li>
       </ul>
-      <button class="btn-primary" onclick="openModal('All Access Bundle')" style="width:100%">Get Full Access</button>
+      <button class="btn-primary" onclick="openModal(&#39;All Access Bundle&#39;)" style="width:100%">Get Full Access</button>
     </div>
 
     <div class="pricing-card fade-in">
@@ -1431,7 +2182,7 @@
         <li><span class="check">✓</span> Custom certificate</li>
         <li><span class="check">✓</span> Priority email support</li>
       </ul>
-      <button class="btn-outline" onclick="openModal('Team License')" style="width:100%">Get Team Plan</button>
+      <button class="btn-outline" onclick="openModal(&#39;Team License&#39;)" style="width:100%">Get Team Plan</button>
     </div>
   </div>
 </section>
@@ -1440,27 +2191,27 @@
 <footer id="contact">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="logo">Tech<span>Vault</span> PRO</a>
+      <a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" class="logo">Tech<span>Vault</span> PRO</a>
       <p>Premium IT course notes and study materials for engineers, students, and professionals aiming for top IT roles.</p>
     </div>
     <div class="footer-col">
       <h4>Courses</h4>
       <ul>
-        <li><a href="#" onclick="loadCourse('linux')">Linux Mastery</a></li>
-        <li><a href="#" onclick="loadCourse('cyber')">Cybersecurity</a></li>
-        <li><a href="#" onclick="loadCourse('devops')">DevOps & CI/CD</a></li>
-        <li><a href="#" onclick="loadCourse('network')">Networking</a></li>
-        <li><a href="#" onclick="loadCourse('vmware')">VMware & ESXi</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" onclick="loadCourse(&#39;linux&#39;)">Linux Mastery</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" onclick="loadCourse(&#39;cyber&#39;)">Cybersecurity</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" onclick="loadCourse(&#39;devops&#39;)">DevOps &amp; CI/CD</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" onclick="loadCourse(&#39;network&#39;)">Networking</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#" onclick="loadCourse(&#39;vmware&#39;)">VMware &amp; ESXi</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
       <ul>
-        <li><a href="#">Free Preview</a></li>
-        <li><a href="#">Sample PDFs</a></li>
-        <li><a href="#">Interview Q&A</a></li>
-        <li><a href="#">Study Roadmap</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">Free Preview</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">Sample PDFs</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">Interview Q&amp;A</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">Study Roadmap</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1468,15 +2219,15 @@
       <ul>
         <li><a href="mailto:mr.ramvishwkarma@gmail.com">📧 mr.ramvishwkarma@gmail.com</a></li>
         <li><a href="https://wa.me/918878091483" target="_blank">📱 WhatsApp: 8878091483</a></li>
-        <li><a href="upi://pay?pa=8878091483@ybl&pn=Ram+Vishwakarma&cu=INR">💳 UPI Pay: 8878091483</a></li>
-        <li><a href="#">📍 Indore, Madhya Pradesh</a></li>
+        <li><a href="upi://pay?pa=8878091483@ybl&amp;pn=Ram+Vishwakarma&amp;cu=INR">💳 UPI Pay: 8878091483</a></li>
+        <li><a href="file:///C:/Users/Ram%20Vishwkarma/Downloads/TechVault-IT-Courses-Website_3.html#">📍 Indore, Madhya Pradesh</a></li>
         <li><a href="mailto:mr.ramvishwkarma@gmail.com">📩 Email for Support</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 TechVault PRO. Built with <span class="heart">♥</span> for IT professionals.</span>
-    <span style="font-family:'Share Tech Mono',monospace; color: var(--accent); font-size:0.8rem;">[ SYSTEM: ONLINE ]</span>
+    <span style="font-family:&#39;Share Tech Mono&#39;,monospace; color: var(--accent); font-size:0.8rem;">[ SYSTEM: ONLINE ]</span>
   </div>
 </footer>
 
@@ -1496,8 +2247,8 @@
     <ul class="features-list">
       <li>Full course notes — all chapters unlocked</li>
       <li>Downloadable PDFs for offline study</li>
-      <li>Templates, scripts & real-world documents</li>
-      <li>Interview preparation Q&A bank</li>
+      <li>Templates, scripts &amp; real-world documents</li>
+      <li>Interview preparation Q&amp;A bank</li>
       <li>Lifetime access — no expiry</li>
     </ul>
 
@@ -1512,7 +2263,7 @@
           <div class="upi-label">UPI ID / Number</div>
           <div class="upi-value">8878091483</div>
         </div>
-        <button class="copy-btn" id="copyUpiBtn" onclick="copyText('8878091483', 'copyUpiBtn')">Copy</button>
+        <button class="copy-btn" id="copyUpiBtn" onclick="copyText(&#39;8878091483&#39;, &#39;copyUpiBtn&#39;)">Copy</button>
       </div>
       <div class="upi-row" style="margin-top:10px">
         <div>
@@ -2024,6 +2775,21 @@ document.getElementById('paymentModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
 
+
+// ====== CHEAT SHEET UPI & WHATSAPP ======
+function csOpenUPI() {
+  const panel = document.getElementById('csUpiPanel');
+  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+  if (panel.style.display === 'block') {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function csWhatsApp() {
+  const msg = encodeURIComponent('Hi! I want to purchase the *Docker Commands Cheat Sheet PDF* for ₹299.\n\nPlease send payment details. 🙏');
+  window.open('https://wa.me/918878091483?text=' + msg, '_blank');
+}
+
 // ====== LOAD DEFAULT COURSE ======
 loadCourse('linux');
 
@@ -2033,5 +2799,6 @@ setTimeout(() => {
   if (firstContent) firstContent.classList.add('open');
 }, 100);
 </script>
-</body>
-</html>
+
+
+</body></html>
