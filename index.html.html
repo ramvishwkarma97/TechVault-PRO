@@ -845,11 +845,72 @@
   .pay-upi:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,255,136,0.4); }
 
   .pay-card {
-    background: linear-gradient(135deg, var(--accent), #0080ff);
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
   }
 
-  .pay-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,229,255,0.4); }
+  .pay-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+
+  .upi-details {
+    background: rgba(0,229,255,0.04);
+    border: 1px dashed rgba(0,229,255,0.3);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+  .upi-details.show { display: block; }
+
+  .upi-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+
+  .upi-row:last-child { margin-bottom: 0; }
+
+  .upi-label { color: var(--text3); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+  .upi-value {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--accent2);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .copy-btn {
+    background: rgba(0,229,255,0.12);
+    border: 1px solid var(--border2);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+  }
+
+  .copy-btn:hover { background: rgba(0,229,255,0.25); }
+  .copy-btn.copied { color: var(--accent2); border-color: var(--accent2); }
+
+  .steps-note {
+    background: rgba(245,166,35,0.08);
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: #f5a623;
+    line-height: 1.6;
+    display: none;
+  }
+
+  .steps-note.show { display: block; }
 
   .modal-note {
     font-size: 0.8rem;
@@ -1329,7 +1390,7 @@
   <div class="pricing-grid">
     <div class="pricing-card fade-in">
       <div class="plan-name">Single Module</div>
-      <div class="plan-price">₹399</div>
+      <div class="plan-price">₹299</div>
       <div class="plan-period">One-time • 1 topic</div>
       <ul class="plan-features">
         <li><span class="check">✓</span> Full module notes (50-95 pages)</li>
@@ -1402,53 +1463,14 @@
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
-    <html>
-<head>
-  <title>Contact Buttons</title>
-  <style>
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 10px;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 18px;
-    }
-
-    .whatsapp {
-      background: #25D366;
-    }
-
-    .email {
-      background: #0072c6;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- WhatsApp Button -->
-  <a class="btn whatsapp"
-     href="https://wa.me/8878091483?text=Hello"
-     target="_blank">
-     Chat on WhatsApp
-  </a>
-
-  <!-- Email Button -->
-  <a class="btn email"
-     href="mr.ramvishwkarma@gmail.com">
-     Send Email
-  </a>
-
-</body>
-</html>   
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">📧 mr.ramvishwkarma@gmail.com</a></li>
-        <li><a href="#">📱 WhatsApp Support</a></li>
-        <li><a href="#">📍 Indore, MP</a></li>
-        <li><a href="#">Telegram Channel</a></li>
+        <li><a href="mailto:mr.ramvishwkarma@gmail.com">📧 mr.ramvishwkarma@gmail.com</a></li>
+        <li><a href="https://wa.me/918878091483" target="_blank">📱 WhatsApp: 8878091483</a></li>
+        <li><a href="upi://pay?pa=8878091483@ybl&pn=Ram+Vishwakarma&cu=INR">💳 UPI Pay: 8878091483</a></li>
+        <li><a href="#">📍 Indore, Madhya Pradesh</a></li>
+        <li><a href="mailto:mr.ramvishwkarma@gmail.com">📩 Email for Support</a></li>
       </ul>
     </div>
   </div>
@@ -1467,7 +1489,7 @@
     <p class="modal-sub" id="modalCourseName">Get complete notes for this course module.</p>
 
     <div class="price-display">
-      <div class="amount" id="modalPrice">₹1499</div>
+      <div class="amount" id="modalPrice">₹999</div>
       <div class="course-name" id="modalPlanName">All Access Bundle</div>
     </div>
 
@@ -1478,7 +1500,34 @@
       <li>Interview preparation Q&A bank</li>
       <li>Lifetime access — no expiry</li>
     </ul>
-    <p class="modal-note">🔒 100% Secure Payment • Instant Access After Payment</p>
+
+    <div class="payment-options">
+      <button class="pay-btn pay-upi" onclick="showUPI()">📲 Pay via UPI / GPay</button>
+      <button class="pay-btn pay-card" onclick="openWhatsApp()">💬 WhatsApp &amp; Pay</button>
+    </div>
+
+    <div class="upi-details" id="upiPanel">
+      <div class="upi-row">
+        <div>
+          <div class="upi-label">UPI ID / Number</div>
+          <div class="upi-value">8878091483</div>
+        </div>
+        <button class="copy-btn" id="copyUpiBtn" onclick="copyText('8878091483', 'copyUpiBtn')">Copy</button>
+      </div>
+      <div class="upi-row" style="margin-top:10px">
+        <div>
+          <div class="upi-label">Pay to Name</div>
+          <div class="upi-value" style="font-size:0.9rem; color:var(--text);">Ram Vishwakarma</div>
+        </div>
+        <span style="font-size:1.4rem;">💳</span>
+      </div>
+    </div>
+
+    <div class="steps-note" id="upiSteps">
+      📋 <strong>Steps:</strong> Open GPay / PhonePe / Paytm → Search UPI ID <strong>8878091483</strong> → Pay amount → Screenshot share karo WhatsApp <strong>8878091483</strong> pe → Notes turant bheje jayenge! ✅
+    </div>
+
+    <p class="modal-note">🔒 Secure Payment • After payment screenshot send karo WhatsApp pe • Notes within 5 min ✅</p>
   </div>
 </div>
 
@@ -1516,7 +1565,7 @@ const courses = {
     icon: '🐧',
     desc: 'Complete Linux guide from fundamentals to enterprise SRE-level scenarios, assignments & troubleshooting.',
     tags: ['Shell Scripting', 'Top Commands', 'Scenarios', 'Assignments', 'SRE Level'],
-    price: '₹399',
+    price: '₹299',
     pages: [
       {
         num: '01',
@@ -1942,12 +1991,33 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+function showUPI() {
+  document.getElementById('upiPanel').classList.add('show');
+  document.getElementById('upiSteps').classList.add('show');
+}
+
+function openWhatsApp() {
+  const price = document.getElementById('modalPrice').textContent;
+  const plan = document.getElementById('modalPlanName').textContent;
+  const msg = encodeURIComponent(`Hi! I want to purchase: *${plan}* (${price})\n\nPlease send me the payment details and notes. 🙏`);
+  window.open(`https://wa.me/918878091483?text=${msg}`, '_blank');
+}
+
+function copyText(text, btnId) {
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById(btnId);
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
 function handlePayment(method) {
   const price = document.getElementById('modalPrice').textContent;
   const plan = document.getElementById('modalPlanName').textContent;
   closeModal();
-  // In production, integrate Razorpay/PayU here
-  alert(`✅ Redirecting to ${method} payment for "${plan}" — ${price}\n\n📧 After payment, notes will be emailed to you within 5 minutes.\n\nFor payment contact:\ntechvaultpro@gmail.com\n📱 WhatsApp: [Your Number]`);
+  const msg = encodeURIComponent(`Hi! I want to purchase: *${plan}* (${price})\n\nPlease send me the notes. 🙏`);
+  window.open(`https://wa.me/918878091483?text=${msg}`, '_blank');
 }
 
 document.getElementById('paymentModal').addEventListener('click', function(e) {
